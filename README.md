@@ -1,27 +1,32 @@
 # ContactsList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+Projeto criado usando Angular CLI versão 12.0.0.
 
-## Development server
+## Objetivo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Este projeto foi elaborado visando obtenção de nota na matéria Laboratório de Programação III do curso de Sistemas de Informação, no CESMAC/AL.
 
-## Code scaffolding
+## Passos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Passo 0
 
-## Build
+Antes de mais nada, certifique-se de já tem instalado o Node.js, o npm e o Angular CLI em sua máquina.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Passo 1
 
-## Running unit tests
+Após clonar o repositório e abri-lo em seu editor de testo, rode o comando 'npm install' para instalar as dependências do projeto.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Passo 2
 
-## Running end-to-end tests
+Em seguida instale o Json-Server com o comando 'npm install -g json-server'. Com esse comando, o Json-Server será instalado globalmente em sua máquina.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+### Passo 3
 
-## Further help
+Inicie a aplicação e o Json-Server:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    Para iniciar a aplicação, rode o comando 'npm start' no terminal;
+    Em um terminal novo, rode o comando 'json-server --watch db.json', para iniciar o Json-Server.
+
+### Passo 4
+
+Abra o navegador e navegue até 'http://localhost:4200'
