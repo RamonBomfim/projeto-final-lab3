@@ -1,0 +1,40 @@
+<div class="form-container">
+  <div class="main-content">
+    <form
+      autocomplete="off"
+      [formGroup]="cadastro"
+      novalidate
+      (ngSubmit)="submit()"
+      (ngReset)="reiniciarForm()"
+    >
+      <fieldset>
+        <legend>Novo contato</legend>
+
+        <app-input-text
+          titulo="Nome *"
+          controlName="nome"
+          [formGroup]="cadastro"
+        ></app-input-text>
+        <app-input-number
+          titulo="WhatsApp * (Ex.: XX XXXXX-XXXX)"
+          controlName="whatsApp"
+          [formGroup]="cadastro"
+        ></app-input-number>
+        <app-input-email
+          titulo="E-mail * (Ex.: exemplo@email.com)"
+          controlName="email"
+          [formGroup]="cadastro"
+        ></app-input-email>
+        <app-input-text
+          titulo="Instagram (Ex.: @silvesteralone_)"
+          controlName="instagram"
+          [formGroup]="cadastro"
+        ></app-input-text>
+        <div class="buttons">
+          <button class="button-save" type="submit">Salvar</button>
+          <button class="button-cancel" type="reset">Cancelar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

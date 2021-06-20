@@ -1,0 +1,46 @@
+<div class="home-page">
+  <mat-toolbar class="app-title">Contatos</mat-toolbar>
+  <div class="add-contact-container">
+    <a
+      mat-fab
+      color="accent"
+      [routerLink]="['/contatos/cadastro']"
+      aria-label="Botão de adicionar contato"
+    >
+      <span>Adicionar contato</span>
+      <mat-icon>add</mat-icon>
+    </a>
+  </div>
+  <div class="home-content">
+    <mat-accordion class="panel-expasion-container">
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        *ngFor="let contato of contatos"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ contato.nome }}
+          </mat-panel-title>
+          <mat-panel-description
+            >WhatsApp: {{ contato.whatsApp }}</mat-panel-description
+          >
+        </mat-expansion-panel-header>
+        <div class="info-container">
+          <h4>
+            E-mail:
+            <p>{{ contato.email }}</p>
+          </h4>
+          <h4>
+            Instagram:
+            <p>{{ contato.instagram }}</p>
+          </h4>
+        </div>
+        <div class="buttons">
+          <button class="edit-button" [routerLink]="['/cadastro/edit', contato.id]"><mat-icon>edit</mat-icon></button>
+          <button class="delete-button" (click)="excluir(contato.id)"><mat-icon>delete</mat-icon></button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

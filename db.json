@@ -1,0 +1,74 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Silvester Estalonge",
+      "whatsApp": "82999999999",
+      "email": "silvester.estaperto@gmail.com",
+      "instagram": "@silvester.chegou"
+    },
+    {
+      "id": 2,
+      "nome": "Steve Trabalho",
+      "whatsApp": "82998989898",
+      "email": "steve_trabalho@apple.com",
+      "instagram": "@trabalho_steve"
+    },
+    {
+      "id": 3,
+      "nome": "Jean Nuvem Van Damme",
+      "whatsApp": "82997979797",
+      "email": "damme-damme@hotmail.com",
+      "instagram": "@nuvem_damme"
+    },
+    {
+      "id": 4,
+      "nome": "Bill Portões",
+      "whatsApp": "82996969696",
+      "email": "billportoes@outlook.com",
+      "instagram": "@bill.gates"
+    },
+    {
+      "id": 5,
+      "nome": "Ada Lovelace",
+      "whatsApp": "82995959595",
+      "email": "adinha123@gmail.com",
+      "instagram": "@lovelace_dev"
+    },
+    {
+      "id": 6,
+      "nome": "Steve Braniak",
+      "whatsApp": "82994949494",
+      "email": "braniak-vilao@apple.com",
+      "instagram": "@wozniak"
+    },
+    {
+      "id": 7,
+      "nome": "Stephen Águia-rei",
+      "whatsApp": "82993939393",
+      "email": "sougenio@gmail.com",
+      "instagram": "@steve.hawk"
+    },
+    {
+      "id": 8,
+      "nome": "Maria Courri",
+      "whatsApp": "82992929292",
+      "email": "radioatividade@hotmail.com",
+      "instagram": "@marie-curie"
+    },
+    {
+      "nome": "Fulaninho",
+      "whatsApp": "82987878787",
+      "email": "fulaninho123@hotmail.com",
+      "instagram": "@fulaninho123",
+      "id": 9
+    },
+    {
+      "nome": "Ciclano",
+      "whatsApp": "98686-8686",
+      "email": "ciclano321@gmail.com",
+      "instagram": "@ciclaninho_",
+      "id": 10
+    }
+  ]
+}

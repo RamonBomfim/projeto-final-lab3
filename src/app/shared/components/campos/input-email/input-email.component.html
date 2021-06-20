@@ -1,0 +1,21 @@
+<div [formGroup]="formGroup" class="input-block">
+  <input
+    type="email"
+    [placeholder]="titulo"
+    [name]="controlName"
+    [formControlName]="controlName"
+  />
+  <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'required')"
+    >Campo obrigatório</mat-error
+  >
+  <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'minlength')"
+    >Campo precisa ter no mínimo
+    {{ validacao.lengthValidar(formControl, "minlength") }}
+    caractéres</mat-error
+  >
+  <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'maxlength')"
+    >Campo só pode ter no máximo
+    {{ validacao.lengthValidar(formControl, "maxlength") }}
+    caractéres</mat-error
+  >
+</div>
