@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contato } from '../shared/models/contato';
@@ -16,15 +16,22 @@ export class ContatosService {
     return this.http.post<Contato>(url, contato);
   }
 
+  editar(contato: Contato): Observable<Contato> {
+    return this.http.put<Contato>(url + contato.id, contato);
+  }
+
   listar(): Observable<Contato[]> {
-    return this.http.get<Contato[]>(url)
+    let httpParams = new HttpParams();
+    httpParams = httpParams.set('_sort', 'nome');
+    httpParams = httpParams.set('_order', 'asc');
+    return this.http.get<Contato[]>(url, {params: httpParams});
   }
 
-  listarPorId(id: number | undefined): Observable<Contato> {
-    return this.http.get<Contato>(`${url}/${id}`);
+  visualizar(id: number | undefined): Observable<Contato> {
+    return this.http.get<Contato>(url + id); 
   }
 
-  excluir(id: number | undefined): Observable<any> {
-    return this.http.delete<any>(`${url}/${id}`)
+  excluir(id: number | undefined): Observable<void> {
+    return this.http.delete<void>(url + id);
   }
 }

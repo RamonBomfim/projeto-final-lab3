@@ -23,16 +23,11 @@ export class ListagemContatosComponent implements OnInit {
     ngOnInit(): void {
         this.id = this.activatedRoute.snapshot.params['id'];
 
-        this.contatosService.listar().subscribe((contatos: Contato[]) => this.contatos = contatos);
+        this.contatosService.listar()
+        .subscribe((contatos: Contato[]) => this.contatos = contatos);
     }
 
-    excluir(contatoId: number | undefined): void {
-        this.contatosService.excluir(contatoId).subscribe({
-            next: () => {
-                alert("Contato apagado com sucesso!");
-                this.contatosService.listar().subscribe((contatos: Contato[]) => this.contatos = contatos);
-            },
-            error: err => alert("Não foi possível apagar este contato, tente novamente mais tarde!")
-        })
+    editar(contatoId: number | undefined): void {
+        this.router.navigateByUrl('/contatos/' + contatoId);
     }
 }

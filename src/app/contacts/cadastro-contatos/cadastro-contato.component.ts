@@ -17,6 +17,7 @@ export class CadastroContatosComponent implements OnInit{
 
     cadastro!: FormGroup;
     contato!: Contato;
+    id!: number;
 
     constructor(
         public validacao: ValidarCamposService,
@@ -32,17 +33,13 @@ export class CadastroContatosComponent implements OnInit{
 
     ngOnInit(): void{
 
-        this.contatoService.listarPorId(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe({
-            next: contato => this.contato = contato,
-            error: err => console.error('Error', err)
-        });
-
-        this.cadastro = this.fb.group({
-            nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(256)]],
-            whatsApp: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(13)]],
-            email: ['', [Validators.required, Validators.minLength(10)]],
-            instagram: ['', Validators.minLength(2)]
-        })
+        this.id = this.activatedRoute.snapshot.params['id'];
+        if (this.id) {
+            this.contatoService.visualizar(this.id)
+            .subscribe((contato: Contato) => this.criarFormulario(contato));
+        } else {
+            this.criarFormulario(this.criarContatoEmBranco());
+        }
 
     }
 
@@ -54,11 +51,35 @@ export class CadastroContatosComponent implements OnInit{
         }
 
         const contato = this.cadastro.getRawValue() as Contato;
-        this.salvar(contato);
+        if (this.id) {
+            contato.id = this.id;
+            this.editar(contato);
+        } else {
+            this.salvar(contato);
+        }
     }
 
     reiniciarForm(): void {
         this.cadastro.reset();
+    }
+
+    private criarFormulario(contato: Contato): void {
+        this.cadastro = this.fb.group({
+            nome: [contato.nome, [Validators.required, Validators.minLength(3), Validators.maxLength(256)]],
+            whatsApp: [contato.whatsApp, [Validators.required, Validators.minLength(9), Validators.maxLength(13)]],
+            email: [contato.email, [Validators.required, Validators.minLength(10)]],
+            instagram: [contato.instagram, Validators.minLength(2)]
+        });
+    }
+
+    private criarContatoEmBranco(): Contato {
+        return {
+            id: null,
+            nome: null,
+            whatsApp: null,
+            email: null,
+            instagram: null
+        } as unknown as Contato;
     }
 
     private salvar(contato: Contato): void {
@@ -78,7 +99,7 @@ export class CadastroContatosComponent implements OnInit{
                 } else {
                     this.reiniciarForm();
                 }
-            })
+            });
         },
         () => {
             const config = {
@@ -90,7 +111,31 @@ export class CadastroContatosComponent implements OnInit{
                 } as Alerta
             };
             this.dialog.open(AlertaComponent, config);
-        })
+        });
+    }
+
+    private editar(contato: Contato): void {
+        this.contatoService.editar(contato).subscribe(() => {
+            const config = {
+                data: {
+                    descricao: 'Este contato foi atualizado com sucesso.',
+                    btnSucesso: 'Ir para a Home',
+                } as Alerta
+            };
+            const dialogRef = this.dialog.open(AlertaComponent, config)
+            dialogRef.afterClosed().subscribe(() => this.router.navigateByUrl('contatos'));
+        },
+        () => {
+            const config = {
+                data: {
+                    titulo: 'Erro ao editar!',
+                    descricao: 'Não conseguimos editar seu registro, favor tente novamente mais tarde!',
+                    corBtnSucesso: 'warn',
+                    btnSucesso: 'Fechar',
+                } as Alerta
+            };
+            this.dialog.open(AlertaComponent, config);
+        });
     }
 
 }

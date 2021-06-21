@@ -1,18 +1,18 @@
 {
   "contatos": [
     {
-      "id": 1,
       "nome": "Silvester Estalonge",
-      "whatsApp": "82999999999",
+      "whatsApp": "82 99999-9999",
       "email": "silvester.estaperto@gmail.com",
-      "instagram": "@silvester.chegou"
+      "instagram": "@silvester.chegou",
+      "id": 1
     },
     {
-      "id": 2,
       "nome": "Steve Trabalho",
-      "whatsApp": "82998989898",
+      "whatsApp": "82 99898-9898",
       "email": "steve_trabalho@apple.com",
-      "instagram": "@trabalho_steve"
+      "instagram": "@trabalho_steve",
+      "id": 2
     },
     {
       "id": 3,
@@ -48,27 +48,6 @@
       "whatsApp": "82993939393",
       "email": "sougenio@gmail.com",
       "instagram": "@steve.hawk"
-    },
-    {
-      "id": 8,
-      "nome": "Maria Courri",
-      "whatsApp": "82992929292",
-      "email": "radioatividade@hotmail.com",
-      "instagram": "@marie-curie"
-    },
-    {
-      "nome": "Fulaninho",
-      "whatsApp": "82987878787",
-      "email": "fulaninho123@hotmail.com",
-      "instagram": "@fulaninho123",
-      "id": 9
-    },
-    {
-      "nome": "Ciclano",
-      "whatsApp": "98686-8686",
-      "email": "ciclano321@gmail.com",
-      "instagram": "@ciclaninho_",
-      "id": 10
     }
   ]
 }

@@ -26,19 +26,10 @@
             >WhatsApp: {{ contato.whatsApp }}</mat-panel-description
           >
         </mat-expansion-panel-header>
-        <div class="info-container">
-          <h4>
-            E-mail:
-            <p>{{ contato.email }}</p>
-          </h4>
-          <h4>
-            Instagram:
-            <p>{{ contato.instagram }}</p>
-          </h4>
-        </div>
         <div class="buttons">
-          <button class="edit-button" [routerLink]="['/cadastro/edit', contato.id]"><mat-icon>edit</mat-icon></button>
-          <button class="delete-button" (click)="excluir(contato.id)"><mat-icon>delete</mat-icon></button>
+          <button class="edit-button" (click)="editar(contato.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
         </div>
       </mat-expansion-panel>
     </mat-accordion>

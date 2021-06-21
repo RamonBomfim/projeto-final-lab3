@@ -7,6 +7,7 @@ import { CadastroContatosComponent } from "./cadastro-contatos/cadastro-contato.
 import { ListagemContatosComponent } from "./listagem-contatos/listagem-contatos.component";
 import { AppRoutingModule } from "../app-routing.module";
 import { CamposModule } from "../shared/components/campos/campos.module";
+import { VisualizarContatosComponent } from './visualizar-contatos/visualizar-contatos.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { CamposModule } from "../shared/components/campos/campos.module";
   ],
   declarations: [
     CadastroContatosComponent,
-    ListagemContatosComponent
+    ListagemContatosComponent,
+    VisualizarContatosComponent
   ]
 })
 export class ContatosModule { }

@@ -1,0 +1,54 @@
+.view-content {
+  display: flex;
+  min-height: 100vh;
+  flex: 1;
+  flex-direction: column;
+
+  background: #c4c6c9;
+}
+
+.main-content {
+  width: 30rem;
+  margin: 1rem auto 1rem auto;
+  background: #575858;
+  border: 1px solid #bec7c9;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 18px 0px rgb(0 0 0 / 25%),
+    0px 6px 10px 0px rgb(0 0 0 / 25%), 0px 1px 18px 0px rgb(0 0 0 / 25%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  width: 20rem;
+  margin: 1rem auto 1rem auto;
+  background: #b0b4b4;
+  border: 1px dashed #ffffff;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.config-item {
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 0.5rem;
+}
+
+.buttons {
+  width: 12rem;
+  margin: 1rem auto 1rem auto;
+  background: #b0b4b4;
+  border-radius: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

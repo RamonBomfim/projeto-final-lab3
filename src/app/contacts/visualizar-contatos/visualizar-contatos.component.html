@@ -1,0 +1,19 @@
+<div class="view-content">
+    <div class="main-content">
+        <div class="info">
+            <mat-list *ngIf="contato">
+                <mat-list-item class="config-item">Nome: {{ contato.nome }}</mat-list-item>
+                <mat-list-item class="config-item">WhatsApp: {{ contato.whatsApp }}</mat-list-item>
+                <mat-list-item class="config-item">E-mail: {{ contato.email }}</mat-list-item>
+                <mat-list-item class="config-item">Instagram: {{ contato.instagram }}</mat-list-item>
+            </mat-list>
+        </div>
+        <mat-card class="buttons">
+            <mat-card-actions>
+                <button color="accent" mat-raised-button (click)="editar()">Editar</button>
+                <button color="warn" mat-raised-button (click)="excluir()">Excluir</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
